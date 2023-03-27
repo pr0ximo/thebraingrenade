@@ -1,11 +1,11 @@
 ---
 name: Devin Kim
 avatar: /static/images/avatar.png
-occupation: Professor of Atmospheric Science
+occupation: Developer
 company: University of Washington
 email: dwk1987@gmail.com
 twitter: https://twitter.com/Twitter
-linkedin: https://www.linkedin.com
+linkedin: https://www.linkedin.com/devinkim1
 github: https://github.com
 ---
 
