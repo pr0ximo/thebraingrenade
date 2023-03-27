@@ -1,0 +1,32 @@
+---
+title: RaspberryPi4 Garage Door Opener 
+date: '2023-03-26'
+tags: ['IoT']
+draft: false
+summary: How To install a RaspberryPi based garage door opener step by step. 
+images: []
+layout: PostLayout
+canonicalUrl:
+---
+
+## Introduction
+Garage door openers are great aren't they.  This garage door opener
+is for a single car garage.  It is a simple design that uses a RaspberryPi4
+to control a relay that is connected to the garage door opener.  The
+RaspberryPi4 is connected to the internet via WiFi.  The garage door
+opener is controlled via a web page that is hosted in AWS Ec2. Optionally
+you could also do a serverless design, but I wanted to use some spare Ec2 credits
+that I had laying around. The web page is written in React, and can be hosted in either
+s3 or Ec2.  
+
+## Hardware
+The hardware is pretty simple.  You need:
+
+1. RaspberryPi4
+2. Relay
+4. 12V power supply
+
+## Software
+For my backend I used AWS Ec2.  I used a t3.micro instance.  I used a Golang web server to
+communicate with AWS IoT MQQT broker, and AWS IoT was used to communicate with the RaspberryPi4.
+
