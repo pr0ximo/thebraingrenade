@@ -1,7 +1,7 @@
 const siteMetadata = {
-  title: 'Next.js Starter Blog',
+  title: 'Next.js The Brain Grenade Blog',
   author: 'Devin Kim',
-  headerTitle: 'TailwindBlog',
+  headerTitle: 'The Brain Grenade Blog',
   description: 'A blog created with Next.js and Tailwind.css',
   language: 'en-us',
   theme: 'system', // system, dark or light
