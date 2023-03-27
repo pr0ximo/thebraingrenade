@@ -2,7 +2,7 @@ const siteMetadata = {
   title: 'TheBrainGrenade',
   author: 'Devin Kim',
   headerTitle: 'TheBrainGrenade',
-  description: 'A blog created with Next.js and Tailwind.css',
+  description: 'Documenting my journey around the sun',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
