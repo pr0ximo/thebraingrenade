@@ -9,6 +9,6 @@ linkedin: https://www.linkedin.com/devinkim1
 github: https://github.com
 ---
 
-Devin Kim is a cloud engineer that specializes in data and application development in AWS. He enjoys spending time with family, and traveling.
+Devin Kim specializes in data and application development. He enjoys spending time with family, and traveling.
 
 He is an avid hockey fan. Go Seattle Kraken! 
