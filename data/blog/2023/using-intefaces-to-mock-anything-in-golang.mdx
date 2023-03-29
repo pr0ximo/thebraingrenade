@@ -22,6 +22,7 @@ type S3API interface {
     GetObject(input *s3.GetObjectInput) (*s3.GetObjectOutput, error)
 }
 ```
+
 We define the S3API interface with two methods, PutObject and GetObject. These methods are the ones we will use to interact with S3.
 
 Next, we can create a mock implementation of the S3API interface. This implementation will provide a fake implementation of the methods defined in the S3API interface. Here's an example of a mock implementation of the S3API interface:
