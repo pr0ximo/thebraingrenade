@@ -1,6 +1,6 @@
 ---
 title: Using intefaces to mock anything in Golang
-date: '2023-03-26'
+date: '2023-03-28'
 tags: ['golang']
 draft: false
 summary: Using the beauty of golang intefaces to mock just about anything 
@@ -25,6 +25,7 @@ We define the S3API interface with two methods, PutObject and GetObject. These m
 
 Next, we can create a mock implementation of the S3API interface. This implementation will provide a fake implementation of the methods defined in the S3API interface. Here's an example of a mock implementation of the S3API interface:
 
+```golang
 type MockS3 struct {
     PutObjectFunc func(input *s3.PutObjectInput) (*s3.PutObjectOutput, error)
     GetObjectFunc func(input *s3.GetObjectInput) (*s3.GetObjectOutput, error)
@@ -43,10 +44,13 @@ func (m *MockS3) GetObject(input *s3.GetObjectInput) (*s3.GetObjectOutput, error
     }
     return &s3.GetObjectOutput{}, nil
 }
+```
+
 The MockS3 struct implements the S3API interface and provides mock implementations of the PutObject and GetObject methods. These methods use the functions defined in the MockS3 struct to return fake responses to the caller.
 
 To use the mock implementation, we can create an instance of the MockS3 struct and set its functions to return the desired fake response. Here's an example:
 
+```golang
 func TestMyFunction(t *testing.T) {
     mockS3 := &MockS3{
         PutObjectFunc: func(input *s3.PutObjectInput) (*s3.PutObjectOutput, error) {
@@ -60,6 +64,8 @@ func TestMyFunction(t *testing.T) {
     // Use mockS3 instead of the real S3API implementation
     myFunction(mockS3)
 }
+```
+
 In this example, we create an instance of the MockS3 struct and set its PutObjectFunc and GetObjectFunc functions to return fake responses. We then use this instance of the MockS3 struct instead of the real S3API implementation in our test function.
 
 ## Conclusion
