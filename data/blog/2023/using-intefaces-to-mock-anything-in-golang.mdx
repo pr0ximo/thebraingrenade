@@ -16,11 +16,12 @@ Interfaces in Golang are a collection of method signatures that define a set of 
 ## Using interfaces to mock AWS calls
 To use interfaces to mock AWS calls, we need to define an interface that defines the methods that we will use to interact with AWS. For example, let's say we want to mock calls to the AWS S3 service. We can define an interface that defines the methods we will use to interact with S3:
 
-
+```golang 
 type S3API interface {
     PutObject(input *s3.PutObjectInput) (*s3.PutObjectOutput, error)
     GetObject(input *s3.GetObjectInput) (*s3.GetObjectOutput, error)
 }
+```
 We define the S3API interface with two methods, PutObject and GetObject. These methods are the ones we will use to interact with S3.
 
 Next, we can create a mock implementation of the S3API interface. This implementation will provide a fake implementation of the methods defined in the S3API interface. Here's an example of a mock implementation of the S3API interface:
