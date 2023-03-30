@@ -16,7 +16,7 @@ Interfaces in Golang are a collection of method signatures that define a set of 
 ## Using interfaces to mock AWS calls
 To use interfaces to mock AWS calls, we need to define an interface that defines the methods that we will use to interact with AWS. For example, let's say we want to mock calls to the AWS S3 service. We can define an interface that defines the methods we will use to interact with S3:
 
-<pre><code>```go
+```go
 type S3API interface {
     PutObject(input *s3.PutObjectInput) (*s3.PutObjectOutput, error)
     GetObject(input *s3.GetObjectInput) (*s3.GetObjectOutput, error)
@@ -69,8 +69,9 @@ func TestMyFunction(t *testing.T) {
 }
 ```
 
-
-In this example, we create an instance of the MockS3 struct and set its PutObjectFunc and GetObjectFunc functions to return fake responses. We then use this instance of the MockS3 struct instead of the real S3API implementation in our test function.
+In this example, we create an instance of the MockS3 struct and set its PutObjectFunc and GetObjectFunc functions to return fake responses. 
+We then use this instance of the MockS3 struct instead of the real S3API implementation in our test function.
 
 ## Conclusion
-Interfaces in GoLang make it possible to mock almost anything! A great tool to have in your tool-belt. 
+Interfaces in GoLang make it possible to mock almost anything! A great tool to have in your tool-belt. This same process can be used to mock just about any 
+external dependency in your application.
