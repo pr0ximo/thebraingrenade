@@ -16,7 +16,7 @@ Interfaces in Golang are a collection of method signatures that define a set of 
 ## Using interfaces to mock AWS calls
 To use interfaces to mock AWS calls, we need to define an interface that defines the methods that we will use to interact with AWS. For example, let's say we want to mock calls to the AWS S3 service. We can define an interface that defines the methods we will use to interact with S3:
 
-```golang 
+<pre><code>```go
 type S3API interface {
     PutObject(input *s3.PutObjectInput) (*s3.PutObjectOutput, error)
     GetObject(input *s3.GetObjectInput) (*s3.GetObjectOutput, error)
@@ -46,13 +46,14 @@ func (m *MockS3) GetObject(input *s3.GetObjectInput) (*s3.GetObjectOutput, error
     }
     return &s3.GetObjectOutput{}, nil
 }
-```
+```</code></pre>
+
 
 The MockS3 struct implements the S3API interface and provides mock implementations of the PutObject and GetObject methods. These methods use the functions defined in the MockS3 struct to return fake responses to the caller.
 
 To use the mock implementation, we can create an instance of the MockS3 struct and set its functions to return the desired fake response. Here's an example:
 
-```golang
+<pre><code>```go
 func TestMyFunction(t *testing.T) {
     mockS3 := &MockS3{
         PutObjectFunc: func(input *s3.PutObjectInput) (*s3.PutObjectOutput, error) {
@@ -66,7 +67,8 @@ func TestMyFunction(t *testing.T) {
     // Use mockS3 instead of the real S3API implementation
     myFunction(mockS3)
 }
-```
+```</code></pre>
+
 
 In this example, we create an instance of the MockS3 struct and set its PutObjectFunc and GetObjectFunc functions to return fake responses. We then use this instance of the MockS3 struct instead of the real S3API implementation in our test function.
 
